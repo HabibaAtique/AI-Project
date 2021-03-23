@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Diabetes Predictor For Females</title>
+	<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+</style>
+
+
+	
+	</head>
+
+    <body style="	width: 100%;height:100%;font-family: 'Open Sans', sans-serif;background: #092756;color: #fff;font-size: 18px;text-align:center;letter-spacing:1.2px;background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+">
+
+		<!-- Result -->
+		<div style="margin-top:50px;">
+			{% if result==1 %}
+				<h1 style=" background-color: rgb(206, 38, 8);">Prediction: <span class='danger'>Opps! You have DIABETES.</span></h1>
+					{% elif result==0 %}
+				<h1 style=" background-color: rgb(219, 172, 17);">Prediction: <span class='safe'>Congrats ! You DON'T have DIABETES.</span></h1>
+				{% endif %}
+		</div>
+		<br><br><br>
+
+		<h3  >Data Distribution Histograms (frequency vs values)</h3>
+		<img src="{{ url_for('static', filename='p1.png') }}" alt="Test1">
+		<img src="{{ url_for('static', filename='p2.png') }}" alt="Test2">
+		<img src="{{ url_for('static', filename='p3.png') }}" alt="Test3">
+		<img src="{{ url_for('static', filename='p4.png') }}" alt="Test4">
+		<img src="{{ url_for('static', filename='p5.png') }}" alt="Test5">
+		<img src="{{ url_for('static', filename='p6.png') }}" alt="Test6">
+		<img src="{{ url_for('static', filename='p7.png') }}" alt="Test7">
+		<img src="{{ url_for('static', filename='p8.png') }}" alt="Test8">
+		<br><br>
+		<h3>Data Distribution of All Quanties in One Plot</h3>
+		
+		<img src="{{ url_for('static', filename='AllinOne.png') }}" alt="All in one">
+		<br><br><br>
+		<div style="  border: 5px outset rgb(255, 255, 255);margin-left:340px;background-color: rgb(88, 83, 8);text-align: center;width: 50%;height:81%;">		
+			<h3 style="text-align:center">Quantities Affecting Diabetes with their Accuracy Values</h3>
+			{% for i in accuracies %}
+			{% if i.0=='Age' %}
+			<h4 style=" background-color: #092756;text-align:center">{{i.0}} >>>>>>>>>>>>>>>> {{i.1}}</h4>
+			{% elif i.0=='BloodPressure' %}
+			<h4 style="background-color: #092756;text-align:center">{{i.0}} >>>>>>>>>>>>>>>> {{i.1}}</h4>
+			{% else %}
+			<h6  style="text-align:center">{{i.0}} >>>>>>>>>>>>>>>> {{i.1}}</h6>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<br>
+		<br>
+		<h4 style="text-align:center"> Comparison of dependency of diabetes on different factors </h4>
+		<img src="{{ url_for('static', filename='new_plot.png') }}" alt="My Plot">
+		<br>
+		<br>
+<br>
+		<h2  style="text-align:center;  background-color: rgb(88, 83, 8);" >{{maximum.0}} is the most resbonsible factor for diabetes</h2>
+		<h1>**********************************************</h1>
+		<br><br><br>
+		
+		
+
+	</body>
+</html>

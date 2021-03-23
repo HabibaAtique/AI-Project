@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <title > Diabetes Predictor For Females</title>
+</head>
+<style>
+ html, body {
+      min-height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      width : 100%;
+      }
+      h1 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #092756;
+       justify-content: center;
+      align-items: center;
+      text-align:center;
+      }
+
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #092756;
+      }
+      form {
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5;
+      background: #f5f5f5;
+      }
+     button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #092756;
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+       @media (min-width: 568px) {
+      .main-block {
+      flex-direction: row;
+      }
+    form-input
+    {
+     width: 100%;
+      padding: 10px;
+      border: none;
+      background: #092756;
+      
+    ]
+
+</style>
+
+<body>
+<br>
+<br>
+<br>
+<br>
+ <div class="results">
+	<h1>Diabetes Predictor For Females</h1>
+
+
+
+    <form style="float:center;" action="{{ url_for('predicting')}}"method="post">
+                <label for name ="pregnancies">Number of Pregnancies </label><br>
+                <input  class="form-input" type="text" name="pregnancies" placeholder=" eg. 0"><br>
+                <label for name ="glucose">Glucose </label><br>
+                <input class="form-input" type="text" name="glucose" placeholder=" eg. 80" in mg/dL><br>
+                <label for name ="bloodpressure">Blood Pressure </label><br>
+                <input class="form-input" type="text" name="bloodpressure" placeholder="eg. 80 in mmHg "><br>
+                <label for name ="skinthickness">Skin Thickness</label><br>
+                <input class="form-input" type="text" name="skinthickness" placeholder=" eg. 20 in mm"><br>
+                <label for name ="insulin">Insulin Level </label><br>
+                <input class="form-input" type="text" name="insulin" placeholder="eg. 80 in IU/mL "><br>
+                <label for name ="bmi">Body Mass Index </label><br>
+                <input class="form-input" type="text" name="bmi" placeholder="eg. 23.1 in kg/m² "><br>
+                <label for name ="dfp">Diabetes Pedigree Function </label><br>
+                <input class="form-input" type="text" name="dpf" placeholder="eg. 0.52"><br>
+                <label for name ="age">Age (years) </label><br>
+                <input class="form-input" type="text" name="age" placeholder="eg. 34 in years"> <br><br>
+
+        <button type="submit" style="font-size = 80%;"class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+	<br>
+   <br>
+
+ </div>
+
+
+</body>
+
+</html>
